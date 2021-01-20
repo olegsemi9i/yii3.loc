@@ -52,7 +52,6 @@ use wbraganca\dynamicform\DynamicFormWidget;
                 'formId' => 'dynamic-form',
                 'formFields' => [
                     'name',
-
                 ],
             ]); ?>
 

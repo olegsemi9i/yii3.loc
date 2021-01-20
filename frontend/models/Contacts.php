@@ -58,7 +58,7 @@ class Contacts extends \yii\db\ActiveRecord
     }
 
     
-    public function validateBirthDate($attribute, $params)
+    public function validateBirthDate($attribute)
     {
         $inputDate = strtotime($this->{$attribute});
         if (!$inputDate) {

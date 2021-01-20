@@ -34,24 +34,11 @@ class Telephone extends \yii\db\ActiveRecord
             [['name'], 'string', 'max' => 20],
             [['id_contacts'], 'exist', 'skipOnError' => true, 'targetClass' => Contacts::className(), 'targetAttribute' => ['id_contacts' => 'id']],
             
-            //['name', 'match', 'pattern' => '^((8|\+7)[\- ]?)?(\(?\d{3,4}\)?[\- ]?)?[\d\- ]{5,10}$', 'message' => 'неверный формат'],
-            
-            [['name'], 'validateName' ]
+            ['name', 'match', 'pattern' => '/^\+?\d{10,13}$/', 'message' => 'неверный формат'],
+
         ];
     }
 
-    public function validateName($attribute, $params)
-    {
-    
-        $pattern = "/^\+38\[0-9]{10,10}+$/";
-        if(preg_match($pattern, $attribute)){
-            return;    
-        } else {
-            $this->addError($attribute, 'неверный формат');
-            return;
-        }
-       
-    }
     
     /**
      * {@inheritdoc}
