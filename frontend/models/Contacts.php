@@ -16,7 +16,7 @@ use yii\data\ActiveDataProvider;
  */
 class Contacts extends \yii\db\ActiveRecord
 {
-
+   
     
     
     public static function minBirthDate(): string
